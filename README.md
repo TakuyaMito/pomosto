@@ -23,3 +23,6 @@
 
 # 画面遷移図
 https://www.figma.com/file/FNE5PGPUtL6ADbmes1nraN/ポートフォリオ?node-id=7%3A369
+
+# ER図
+https://drive.google.com/file/d/1xvwYpCx4uqQmeTUCsVMlUEGsjZQeu27z/view?usp=sharing

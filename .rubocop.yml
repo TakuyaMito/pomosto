@@ -1,0 +1,40 @@
+# rubocop関連のgemをrequireする
+require:
+  - rubocop-rails
+  - rubocop-performance
+
+# 全体に適応する項目を定義。EXcludeに設定したファイルはチェック対象外になる
+AllCops:
+  TargetRubyVersion: 3.0.0
+  NewCops: enable
+  Exclude:
+    - 'vendor/**/*'
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'spec/**/*'
+    - 'node_modules/**/*'
+
+Rails:
+  Enabled: true
+
+# 日本語のコメントを許可
+Style/AsciiComments:
+  Enabled: false
+
+# ドキュメントの無いpublic classを許可
+Style/Documentation:
+  Enabled: false
+
+# 文字列をfreezeするか
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# selfが無くても良い時に省略するか
+Style/RedundantSelf:
+  Enabled: false
+
+Metrics/ClassLength:
+  CountComments: false
+  Max: 300

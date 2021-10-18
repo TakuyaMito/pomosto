@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "bootstrap"
 import "../stylesheets/application"
+import "packs/worktimes.css"
 
 Rails.start()
 Turbolinks.start()

@@ -3,8 +3,10 @@
 
   // タイマーと時間の要素をそれぞれ取得
   var timer = document.getElementById('timer');
-  var min = document.getElementById('min');
-  var sec = document.getElementById('sec');
+  var sss = document.getElementById('3sec');
+  var min = document.getElementById('10min');
+  var short = document.getElementById('25min');
+  var herf = document.getElementById('40min');
   var reset = document.getElementById('reset');
   var start = document.getElementById('start');
 
@@ -33,7 +35,7 @@
     ms = ('00' + ms).slice(-3);
 
     // タイマーの中身を文字列で表現する
-    timer.textContent = m + '分' + s + '秒' + ms;
+    timer.textContent = '残り' + m + '分' + s + '秒';
   }
 
   function countDown() {
@@ -44,7 +46,7 @@
       // 残り時間が０になった時の処理
       if (timeLeft < 0) {
         isRunning = false;
-        start.textContent = 'Start';
+        start.textContent = 'スタート';
         clearTimeout(timerId);
         timeLeft = 0;
         timeToCountDown = 0;
@@ -61,26 +63,40 @@
 
     if (isRunning == false) {
       isRunning = true;
-      start.textContent = 'Stop';
+      start.textContent = '一時停止';
     // スタートタイムを押した時の時刻を取得
     startTime = Date.now();
     // カウントダウンを実行
     countDown();
     } else {
       isRunning = false;
-      start.textContent = 'Start';
+      start.textContent = '再開';
       timeToCountDown = timeLeft;
       clearTimeout(timerId);
     }
   });
 
-  // 分のボタンを押した時の処理
+  // 3秒のボタンを押した時の処理
+  sss.addEventListener('click', function() {
+    if (isRunning === true) {
+      return;
+    }
+    // 3秒
+    timeToCountDown = 1000 * 3;
+    // 60分以上になったら0になる
+    if (timeToCountDown >= 60 * 60 * 1000) {
+      timeToCountDown = 0;
+    }
+    updateTimer(timeToCountDown);
+  });
+
+  // 10分のボタンを押した時の処理
   min.addEventListener('click', function() {
     if (isRunning === true) {
       return;
     }
     // 1分は60秒×1000ms
-    timeToCountDown += 60 * 1000; 
+    timeToCountDown = 60 * 1000 * 10; 
     // 60分以上になったら0になる
     if (timeToCountDown >= 60 * 60 * 1000) {
       timeToCountDown = 0;
@@ -88,13 +104,27 @@
     updateTimer(timeToCountDown);
   });
 
-  // 秒のボタンを押した時の処理
-  sec.addEventListener('click', function() {
+  // 25分のボタンを押した時の処理
+  short.addEventListener('click', function() {
     if (isRunning === true) {
       return;
     }
-    // 1秒
-    timeToCountDown += 1000;
+    // 25分
+    timeToCountDown = 1000 * 60 *25;
+    // 60分以上になったら0になる
+    if (timeToCountDown >= 60 * 60 * 1000) {
+      timeToCountDown = 0;
+    }
+    updateTimer(timeToCountDown);
+  });
+
+  // 40分のボタンを押した時の処理
+  herf.addEventListener('click', function() {
+    if (isRunning === true) {
+      return;
+    }
+    // 40分
+    timeToCountDown = 1000 * 60 * 40;
     // 60分以上になったら0になる
     if (timeToCountDown >= 60 * 60 * 1000) {
       timeToCountDown = 0;
@@ -108,3 +138,28 @@
     updateTimer(timeToCountDown);
   });
 })();
+
+// モーダル
+{
+  const open = document.getElementById('open');
+  const close = document.getElementById('close');
+  const modal = document.getElementById('modal');
+  const mask = document.getElementById('mask');
+
+  open.addEventListener('click', () => {
+    modal.classList.remove('hidden');
+    mask.classList.remove('hidden');
+  });
+
+  close.addEventListener('click', () => {
+    modal.classList.add('hidden');
+    mask.classList.add('hidden');
+  });
+
+  mask.addEventListener('click', () => {
+    // modal.classList.add('hidden');
+    // mask.classList.add('hidden');
+    close.click();
+  });
+}
+

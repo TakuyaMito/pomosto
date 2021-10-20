@@ -1,3 +1,6 @@
+
+
+// タイマー機能
 body {
   font-family: 'Courier New', sans-serif;
   font-size: 14px;
@@ -40,4 +43,76 @@ body {
 
 .controls > div:hover {
   opacity: 0.7;
+}
+
+// 時間を選択した際のモーダル
+
+// ドットインストールのモーダル
+// ボタンのスタイル
+#open, #close {
+  cursor: pointer;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  padding: 12px 0;
+  margin: 16px auto;
+}
+
+// マスクのスタイル
+#mask {
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+// モーダルのスタイル
+#modal {
+  background: #fff;
+  width: 300px;
+  padding: 20px;
+  border-radius: 4px;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+#modal > p {
+  margin: 0 0 20px;
+}
+
+#mask.hidden {
+  display: none;
+}
+// 上部に配置
+#modal.hidden {
+  transform: translate(0, -500px);
+}
+
+.modal{
+  display: none;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.modal__bg{
+  background: rgba(0,0,0,0.8);
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+}
+.modal__content{
+  background: #fff;
+  left: 50%;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 60%;
 }

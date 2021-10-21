@@ -9,13 +9,15 @@
   var herf = document.getElementById('40min');
   var reset = document.getElementById('reset');
   var start = document.getElementById('start');
+  // リンクの非表示
+  document.getElementById('link').style.display = 'none';
+
 
   // スタートタイムを宣言
   var startTime;
   // 残り時間
   var timeLeft;
   // 全体の時間
-  // var timeToCountDown = 4 * 1000; 4秒
   var timeToCountDown = 0;
   // ClearTimeoutの引数を渡すために宣言
   var timerId;
@@ -28,14 +30,16 @@
     // Dateオブジェクトから分、秒を取り出す
     var m = d.getMinutes();
     var s = d.getSeconds();
-    var ms = d.getMilliseconds();
+    // 分、秒を代入する
+    var timerString;
     // スライスで末尾を取り出す
     m = ('0' + m).slice(-2);
     s = ('0' + s).slice(-2);
-    ms = ('00' + ms).slice(-3);
-
+    timeString = m + '分' + s + '秒';
     // タイマーの中身を文字列で表現する
-    timer.textContent = '残り' + m + '分' + s + '秒';
+    timer.textContent = m + '分' + s + '秒';
+    // タブに時間を表示
+    document.title = timeString;
   }
 
   function countDown() {
@@ -50,6 +54,7 @@
         clearTimeout(timerId);
         timeLeft = 0;
         timeToCountDown = 0;
+        link.style.display = "block";
         updateTimer(timeLeft);
         return;
       }
@@ -83,10 +88,6 @@
     }
     // 3秒
     timeToCountDown = 1000 * 3;
-    // 60分以上になったら0になる
-    if (timeToCountDown >= 60 * 60 * 1000) {
-      timeToCountDown = 0;
-    }
     updateTimer(timeToCountDown);
   });
 
@@ -97,10 +98,6 @@
     }
     // 1分は60秒×1000ms
     timeToCountDown = 60 * 1000 * 10; 
-    // 60分以上になったら0になる
-    if (timeToCountDown >= 60 * 60 * 1000) {
-      timeToCountDown = 0;
-    }    
     updateTimer(timeToCountDown);
   });
 
@@ -111,10 +108,6 @@
     }
     // 25分
     timeToCountDown = 1000 * 60 *25;
-    // 60分以上になったら0になる
-    if (timeToCountDown >= 60 * 60 * 1000) {
-      timeToCountDown = 0;
-    }
     updateTimer(timeToCountDown);
   });
 
@@ -125,10 +118,6 @@
     }
     // 40分
     timeToCountDown = 1000 * 60 * 40;
-    // 60分以上になったら0になる
-    if (timeToCountDown >= 60 * 60 * 1000) {
-      timeToCountDown = 0;
-    }
     updateTimer(timeToCountDown);
   });
 
@@ -140,26 +129,14 @@
 })();
 
 // モーダル
-{
-  const open = document.getElementById('open');
-  const close = document.getElementById('close');
-  const modal = document.getElementById('modal');
-  const mask = document.getElementById('mask');
 
-  open.addEventListener('click', () => {
-    modal.classList.remove('hidden');
-    mask.classList.remove('hidden');
+$(function(){
+  $('.js-modal-open').on('click',function(){
+      $('.js-modal').fadeIn();
+      return false;
   });
-
-  close.addEventListener('click', () => {
-    modal.classList.add('hidden');
-    mask.classList.add('hidden');
+  $('.js-modal-close').on('click',function(){
+      $('.js-modal').fadeOut();
+      return false;
   });
-
-  mask.addEventListener('click', () => {
-    // modal.classList.add('hidden');
-    // mask.classList.add('hidden');
-    close.click();
-  });
-}
-
+});

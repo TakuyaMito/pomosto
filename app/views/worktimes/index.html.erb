@@ -1,11 +1,28 @@
+<div class="modal js-modal">
+  <div class="modal__bg "></div>
+    <div class="modal__content">
+      <div class="timer-header">
+        <h2 class="timer-title">タイマー</h2>
+        <div class="js-modal-close" id="close">閉じる</div>
+      </div>
+      <div id="timer">00分00秒</div>
+      <div class="controls">
+        <div id="reset">リセット</div>
+        <div id="start">スタート</div>
+        <%= link_to "ストレッチ", timer_path, id:'link' %>
+      </div>
+  </div><!--modal__inner-->
+</div><!--modal-->
+
  <div class="container">
   <div class="jumbotron">
     <h1 class="display-6">タイマーをセットする</h1>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item"><%= link_to "3秒", timer_path %></li>
-        <li class="list-group-item"><%= link_to "10分", "#" %></li>
-        <li class="list-group-item"><%= link_to "25分", "#" %></li>
-        <li class="list-group-item"><%= link_to "40分", "#" %></li>
+      <ul class="list-group list-group-flush js-modal-open">
+        <li class="list-group-item"><div id="3sec">3秒</div></li>
+        <li class="list-group-item"><div id="10min">10分</div></li>
+        <li class="list-group-item"><div id="25min">25分</div></li>
+        <li class="list-group-item"><div id="40min">40分</div></li>
       </ul>
   </div>
  </div>
+ <%= javascript_pack_tag 'worktimes/timer' %>

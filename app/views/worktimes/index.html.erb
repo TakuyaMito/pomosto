@@ -1,13 +1,11 @@
  <div class="container">
   <div class="jumbotron">
     <h1 class="display-6">タイマーをセットする</h1>
-      <div class="row" >
-      <div class="col-md-4 col-md-offset-4">
-        <%= link_to "10分", timer_path %>
-        <%= link_to "25分", "#" %>
-        <%= link_to "40分", "#" %>
-        <%= link_to "60分", "#" %>
-      </div>
-    </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><%= link_to "3秒", timer_path %></li>
+        <li class="list-group-item"><%= link_to "10分", "#" %></li>
+        <li class="list-group-item"><%= link_to "25分", "#" %></li>
+        <li class="list-group-item"><%= link_to "40分", "#" %></li>
+      </ul>
   </div>
  </div>

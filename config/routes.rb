@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  root 'worktimes#index'
+  get 'timer', to: 'worktimes#new'
 end

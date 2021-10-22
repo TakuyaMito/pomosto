@@ -1,6 +1,13 @@
-
 <div class="top-wraper">
-    <div class="container">
-      <div class="sample"><h2>ここにyoutube</h2></div>
-    </div>
+  <div class="container">
+    <iframe width="560" height="315" src="#" id="youtube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class=container>
+    <%= link_to "作業を続ける", root_path %>
+    <%= link_to "終了する", "#" %>
+  </div>
 </div>
+
+
+ <%= javascript_pack_tag 'worktimes/youtube' %>

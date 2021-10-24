@@ -49,6 +49,35 @@
       timeLeft = timeToCountDown - (Date.now() - startTime);
       // 残り時間が０になった時の処理
       if (timeLeft < 0) {
+
+        // プッシュ通知
+        Push.create("Pomosto", {
+          body: "時間になりました。ストレッチをしましょう!",
+          timeout: 4000,
+          onClick: function () {
+              window.focus();
+              this.close();
+          }
+      });
+        //webオーディオAPIコンテキストを生成
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        //オシレーターノードを生成
+        const oscillator = audioCtx.createOscillator();
+        //ゲインの生成
+        const gainNode = audioCtx.createGain();
+        //webオーディオAPIコンテキストと接続
+        oscillator.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+        //音量
+        gainNode.gain.value = 0.2;
+        //通知音のタイプ
+        oscillator.type = 'sine';
+        //通知音スタート
+        oscillator.start();
+        //通知音ストップ
+        oscillator.stop(0.2);
+        
+
         isRunning = false;
         start.textContent = 'スタート';
         clearTimeout(timerId);

@@ -124,6 +124,7 @@
   // リセットボタンの処理
   reset.addEventListener('click', function() {
     timeToCountDown = 0;
+
     updateTimer(timeToCountDown);
   });
 })();

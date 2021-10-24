@@ -11,6 +11,7 @@ import "channels"
 import "bootstrap"
 import "jquery"
 import "../stylesheets/application.scss"
+import "bootstrap-material-design"
 
 
 Rails.start()

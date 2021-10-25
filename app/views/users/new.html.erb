@@ -1,0 +1,15 @@
+<%= form_with model: @user, local: true do |d| %>
+  <%= f.label :name, '名前' %>
+  <%= f.text_field :name %>
+
+  <%= f.label :email, 'メールアドレス' %>
+  <%= f.email_field :email %>
+
+  <%= f.label :password, 'パスワード' %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation, 'パスワード確認' %>
+  <%= f.password_field :password_confirmation %>
+
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,18 @@
+ja:
+  defaults:
+    login: 'ログイン'
+    guest_login: 'ゲストログイン'
+    signup: 'サインアップ'
+    mypage: 'マイページ'
+    register: '新規登録'
+    logout: 'ログアウト'
+  users:
+    new:
+      title: 'ユーザー登録'
+      to_login_page: 'ログインページへ'
+  user_sessions:
+    new:
+      title: 'ログイン'
+  worktimes:
+    index:
+      title: 'ストレッチ'

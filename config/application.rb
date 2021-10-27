@@ -16,5 +16,10 @@ module Pomosto
       g.helper false
       g.test_framework
     end
+
+    # デフォルトの言語
+    config.i18n.default_locale = :ja
+    # 言語ファイルのパス
+    config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.{rb,yml}').to_s]
   end
 end

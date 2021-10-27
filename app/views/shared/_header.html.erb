@@ -12,8 +12,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navmenu1">
       <div class="navbar-nav ml-auto main-nav align-items-center">
-        <%= link_to "マイページ", "#", class: "nav-item nav-link" %>
-        <%= link_to "ログアウト", logout_path, method: :delete, class: "nav-item nav-link" %>
+        <%= link_to (t "defaults.mypage"), "#", class: "nav-item nav-link" %>
+        <%= link_to (t "defaults.logout"), logout_path, method: :delete, class: "nav-item nav-link" %>
       </div>
     </div>
   </nav>

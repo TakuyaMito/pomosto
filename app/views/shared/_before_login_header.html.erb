@@ -1,4 +1,3 @@
-</header>
 <header>
   <nav class="navbar navbar-expand-sm fixed-top  navbar-dark bg-secondary">
     <%= link_to "Pomosto", root_path, class: "navbar-brand"%>
@@ -12,8 +11,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navmenu1">
       <div class="navbar-nav ml-auto main-nav align-items-center">
-        <%= link_to "マイページ", "#", class: "nav-item nav-link" %>
-        <%= link_to "ログアウト", logout_path, method: :delete, class: "nav-item nav-link" %>
+          <%= link_to "ゲストログイン", "#", class: "nav-item nav-link" %>
+          <%= link_to "サインアップ", new_user_path, class: "nav-item nav-link" %>
+          <%= link_to "ログイン", login_path, class: "nav-item nav-link" %>
       </div>
     </div>
   </nav>

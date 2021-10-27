@@ -1,25 +1,44 @@
 <div class="container">
   <div class="row">
-    <%= form_with model: @user, local: true do |f| %>
-      <div class="form-group">
-        <%= f.label :name, User.human_attribute_name(:name) %>
-        <%= f.text_field :name, class: "form-control" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :email, User.human_attribute_name(:email) %>
-        <%= f.email_field :email, class: "form-control" %>
-      </div>
-        <%= f.label :password, User.human_attribute_name(:password) %>
-        <%= f.password_field :password, class: "form-control" %>
-      <div class="form-group">
-        <%= f.label :password_confirmation, User.human_attribute_name(:password_confirmation) %>
-        <%= f.password_field :password_confirmation, class: "form-control" %>
-      </div>
-      <%= f.submit (t "defaults.register"), class: "btn btn-mdb-color" %>
-    <% end %>
-    <div class="text-center">
-      <%= link_to (t ".to_login_page"), login_path %>
-    </div>
-  </div>
-</div>
+		<div class="col-md-6 col-md-offset-4 mx-auto">
+			<div class="box">
+        <span class="input-group-addon addon-twitter">
+          <p><i class="fas fa-desktop"></i></i><%= t ".title" %></p>
+        </span>
+        <%= form_with model: @user, local: true do |f| %>
+					<div class="divider-form"></div>
+					<div class="form-group">
+          <p><i class="fas fa-pen"></i>
+            <%= f.label :name, User.human_attribute_name(:name) %></p>
+            <%= f.text_field :name, class: "form-control", id: "exampleInputEmail1" %>
+					</div>
 
+					<div class="divider-form"></div>
+					<div class="form-group">
+          <p><i class="far fa-envelope"></i>
+            <%= f.label :email, User.human_attribute_name(:email) %></p>
+            <%= f.text_field :email, class: "form-control", id: "exampleInputEmail1" %>
+					</div>
+
+					<div class="divider-form"></div>
+					<div class="form-group">
+          <p><i class="fa fa-lock"></i>
+            <%= f.label :password, User.human_attribute_name(:password) %></p>
+            <%= f.password_field :password, class: "form-control", id:"exampleInputPassword1" %>
+					</div>
+
+					<div class="divider-form"></div>
+					<div class="form-group">
+          <p><i class="fa fa-lock"></i>
+            <%= f.label :password_confirmation, User.human_attribute_name(:password_confirmation) %></p>
+            <%= f.password_field :password, class: "form-control", id:"exampleInputPassword1" %>
+					</div>
+					<div class="divider-form"></div>
+            <%= f.submit (t "defaults.register"), class: "btn-block btn btn-lg btn-primary" %>
+					<p class="text-center">すでにアカウントをお持ちですか？ 
+            <%= link_to (t ".to_login_page"), login_path, class: "nav-item nav-link" %></p>
+        <% end %>
+			</div>
+		</div>
+	</div>
+</div>

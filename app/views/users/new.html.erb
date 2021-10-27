@@ -31,7 +31,7 @@
 					<div class="form-group">
           <p><i class="fa fa-lock"></i>
             <%= f.label :password_confirmation, User.human_attribute_name(:password_confirmation) %></p>
-            <%= f.password_field :password, class: "form-control", id:"exampleInputPassword1" %>
+            <%= f.password_field :password_confirmation, class: "form-control", id:"exampleInputPassword1" %>
 					</div>
 					<div class="divider-form"></div>
             <%= f.submit (t "defaults.register"), class: "btn-block btn btn-lg btn-primary" %>

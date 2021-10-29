@@ -1,14 +1,15 @@
-<div id="progress_bar"></div> 
-<div class="top-wraper">
+<div data-turbolinks="false">
+  <div id="progress_bar"></div> 
+  <div class="top-wraper">
 
-  <div class="container">
-    <iframe width="560" height="315" src="/" id="youtube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="container">
+      <iframe width="560" height="315" src="/" id="youtube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <div class=container> 
+      <%= link_to "作業を続ける", root_path, class:"btn btn-primary bg-secondary text-light", role:"button" %>
+      <%= link_to "終了する", "#", class:"btn btn-primary bg-secondary text-light offset-sm-1", role:"button" %>
+    </div>
   </div>
-
-  <div class=container> 
-    <%= link_to "作業を続ける", root_path, class:"btn btn-primary bg-secondary text-light", role:"button" %>
-    <%= link_to "終了する", "#", class:"btn btn-primary bg-secondary text-light offset-sm-1", role:"button" %>
-  </div>
-</div>
-
+ </div>
  <%= javascript_pack_tag 'worktimes/youtube' %>

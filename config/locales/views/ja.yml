@@ -6,6 +6,8 @@ ja:
     mypage: 'マイページ'
     register: '新規登録'
     logout: 'ログアウト'
+    message:
+      require_login: 'ログインしてください'
   users:
     new:
       title: 'ユーザー登録'
@@ -17,7 +19,7 @@ ja:
     new:
       title: 'ログイン'
     create:
-      success: 'ログインしましたしました'
+      success: 'ログインしました'
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'

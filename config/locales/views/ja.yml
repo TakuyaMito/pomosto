@@ -6,6 +6,7 @@ ja:
     mypage: 'マイページ'
     register: '新規登録'
     logout: 'ログアウト'
+    list_create: 'リスト作成'
     message:
       require_login: 'ログインしてください'
   users:
@@ -26,3 +27,9 @@ ja:
   worktimes:
     index:
       title: 'ストレッチ'
+  list:
+    new:
+      title: 'リスト作成'
+      create: '作成'
+
+

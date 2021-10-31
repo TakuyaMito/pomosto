@@ -1,0 +1,11 @@
+<div class="listnewPage">
+  <div class="container">
+    <%= form_with model: @list, url: { action: :create }, class: "new_list", local: true do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title, autofocus: true, class: "form-control listName", placeholder: "リスト名" %>
+      <div class="text-center">
+        <%= f.submit (t ".create"), class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

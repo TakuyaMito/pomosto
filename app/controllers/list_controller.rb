@@ -4,7 +4,7 @@ class ListController < ApplicationController
   end
 
   def create
-    @list = current_user.list.build(list_params)
+    @list = current_user.lists.build(list_params)
     if @list.save
       redirect_to :root
     else

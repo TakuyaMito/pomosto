@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'worktimes#index'
+  # root 'worktimes#index'
+  root 'tops#index'
   get 'timer', to: 'worktimes#new'
 
   resources :list, only: %i[new create]

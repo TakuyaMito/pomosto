@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'tops#index'
   get 'timer', to: 'worktimes#new'
 
-  resources :list, only: %i[new create]
+  resources :list, only: %i[new create edit update]
 
   resources :users, only: %i[new create]
   get 'login', to: 'user_sessions#new'

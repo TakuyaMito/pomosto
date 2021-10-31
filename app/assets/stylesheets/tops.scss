@@ -25,6 +25,12 @@
           font-size: 20px;
           margin: 0;
         }
+        &_action {
+          .fa-pen, .fa-trash {
+            font-size: 18px;
+            color: #8c8c8c;
+          }
+        }
       }
     }
   }

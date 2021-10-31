@@ -1,10 +1,10 @@
 <div class="listPage">
   <div class="container">
-    <%= form_with model: @list, url: { action: :create }, class: "listForm", local: true do |f| %>
+    <%= form_with model: @list, class: "listForm", local: true do |f| %>
       <%= f.label :title %>
       <%= f.text_field :title, autofocus: true, class: "form-control listName", placeholder: "リスト名" %>
       <div class="text-center">
-        <%= f.submit (t ".create"), class: "btn btn-primary" %>
+        <%= f.submit (t "defaults.edit"), class: "btn btn-primary" %>
       </div>
     <% end %>
   </div>

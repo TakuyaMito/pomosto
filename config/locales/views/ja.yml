@@ -7,6 +7,11 @@ ja:
     register: '新規登録'
     logout: 'ログアウト'
     list_create: 'リスト作成'
+    edit: '編集'
+    show: '詳細'
+    delete: '削除'
+    send: '送信'
+    delete: '削除'
     message:
       require_login: 'ログインしてください'
   users:
@@ -31,5 +36,8 @@ ja:
     new:
       title: 'リスト作成'
       create: '作成'
+    edit:
+      title: 'リスト編集'
+      
 
 

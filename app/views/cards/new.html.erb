@@ -1,2 +1,17 @@
-<h1>Cards#new</h1>
-<p>Find me in app/views/cards/new.html.erb</p>
+<div class="cardnewPage">
+  <div class="container">
+    <%= form_with model: @card, url: { action: :create }, class: "cardnewForm", local: true do |f| %>
+      <div class="cardnewForm_title">
+        <%= f.label :title %>
+        <%= f.text_field :title, autofocus: true, class: "form-control", placeholder: :title %>
+      </div>
+      <div class="cardnewForm_memo">
+        <%= f.label :memo %>
+        <%= f.text_area :memo, class: "form-control", placeholder: t("defaults.show") %>
+      <div class="text-center">
+        <%= f.submit (t ".create"), class: "btn btn-primary" %>
+      </div>
+      </div>
+    <% end %>
+  </div>
+</div>

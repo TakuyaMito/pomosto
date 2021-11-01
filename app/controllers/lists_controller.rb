@@ -1,4 +1,4 @@
-class ListController < ApplicationController
+class ListsController < ApplicationController
   before_action :find_list, only: %i[edit update destroy]
   def new
     @list = List.new

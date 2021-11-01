@@ -38,6 +38,14 @@ ja:
       create: '作成'
     edit:
       title: 'リスト編集'
+  tops:
+    index:
+      add_card: 'さらにカードを追加'     
+  cards:
+    new:
+      title: 'card名'
+      create: '作成'
+
       
 
 

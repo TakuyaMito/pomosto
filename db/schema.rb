@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_31_072120) do
+ActiveRecord::Schema.define(version: 2021_11_01_014324) do
+
+  create_table "cards", force: :cascade do |t|
+    t.string "title", limit: 255, null: false
+    t.text "memo", limit: 1000
+    t.integer "list_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["list_id"], name: "index_cards_on_list_id"
+  end
 
   create_table "lists", force: :cascade do |t|
     t.string "title", null: false
@@ -40,6 +49,7 @@ ActiveRecord::Schema.define(version: 2021_10_31_072120) do
     t.index ["user_id"], name: "index_worktimes_on_user_id"
   end
 
+  add_foreign_key "cards", "lists"
   add_foreign_key "lists", "users"
   add_foreign_key "worktimes", "users"
 end

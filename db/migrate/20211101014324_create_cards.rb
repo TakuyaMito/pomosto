@@ -4,6 +4,7 @@ class CreateCards < ActiveRecord::Migration[6.1]
       t.string :title, null: false, limit: 255
       t.text :memo, limit: 1000
       t.references :list, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

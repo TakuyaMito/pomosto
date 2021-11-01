@@ -38,6 +38,23 @@
       .cardWrapper {
         overflow-y: scroll;
         max-height: 76vh;
+        .card {
+          margin-bottom: 10px;
+          padding: 10px;
+          &_title {
+            font-size: 17px;
+          }
+          &_detail {
+            display: none;
+            &.is-exist {
+              display: block;
+              color: #999;
+              & > i {
+                display: block;
+              }
+            }
+          }
+        }
         .addCard {
           color: #8c8c8c;
           &_link {

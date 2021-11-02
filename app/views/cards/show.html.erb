@@ -15,6 +15,7 @@
       </div>
       <div class="cardContents_btnArea">
         <%= link_to t(".edit"), edit_list_card_path(@card.list, @card), class: "edit_btn" %>
+        <%= link_to t(".delete"), list_card_path(@card.list, @card), class: "text-danger delete_btn", method: :delete, data: { confirm: t("defaults.message.delete_confirm")} %>
       </div>
     </div>
   </div>

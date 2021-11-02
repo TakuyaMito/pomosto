@@ -16,6 +16,7 @@ ja:
     title: 'タイトル'
     message:
       require_login: 'ログインしてください'
+      delete_confirm: '削除しますか？'
   users:
     new:
       title: 'ユーザー登録'
@@ -51,6 +52,7 @@ ja:
       memo: 'メモ'
       list: 'リスト名'
       edit: '編集する'
+      delete: '削除する'
     edit:
       title: 'card名'
       update: '更新'

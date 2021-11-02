@@ -14,6 +14,7 @@ ja:
     send: '送信'
     delete: '削除'
     title: 'タイトル'
+    add_card: 'さらにカードを追加'  
     message:
       require_login: 'ログインしてください'
       delete_confirm: '削除しますか？'
@@ -35,15 +36,16 @@ ja:
   worktimes:
     index:
       title: 'ストレッチ'
-  list:
+  lists:
     new:
       title: 'リスト作成'
       create: '作成'
+      name: 'リスト名'
     edit:
       title: 'リスト編集'
+      name: 'リスト名'
   tops:
-    index:
-      add_card: 'さらにカードを追加'     
+    index:   
   cards:
     new:
       title: 'card名'

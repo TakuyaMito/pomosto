@@ -2,9 +2,16 @@ ja:
   activerecord:
     models:
       user: 'ユーザー'
+      list: 'リスト'
+      card: 'カード'
     attributes:
       user:
         name: '名前'
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
+      list:
+        title: 'タイトル'
+      card:
+        title: 'タイトル'
+        memo: 'メモ'

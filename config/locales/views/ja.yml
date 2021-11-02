@@ -6,6 +6,18 @@ ja:
     mypage: 'マイページ'
     register: '新規登録'
     logout: 'ログアウト'
+    list_create: 'リスト作成'
+    update: '更新'
+    edit: '編集'
+    show: '詳細'
+    delete: '削除'
+    send: '送信'
+    delete: '削除'
+    title: 'タイトル'
+    add_card: 'さらにカードを追加'  
+    message:
+      require_login: 'ログインしてください'
+      delete_confirm: '削除しますか？'
   users:
     new:
       title: 'ユーザー登録'
@@ -17,10 +29,36 @@ ja:
     new:
       title: 'ログイン'
     create:
-      success: 'ログインしましたしました'
+      success: 'ログインしました'
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
   worktimes:
     index:
       title: 'ストレッチ'
+  lists:
+    new:
+      title: 'リスト作成'
+      create: '作成'
+      name: 'リスト名'
+    edit:
+      title: 'リスト編集'
+      name: 'リスト名'
+  tops:
+    index:   
+  cards:
+    new:
+      title: 'card名'
+      create: '作成'
+    show:
+      memo: 'メモ'
+      list: 'リスト名'
+      edit: '編集する'
+      delete: '削除する'
+    edit:
+      title: 'card名'
+      update: '更新'
+
+      
+
+

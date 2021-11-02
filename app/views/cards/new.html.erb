@@ -1,6 +1,7 @@
 <div class="cardnewPage">
   <div class="container">
     <%= form_with model: @card, url: { action: :create }, class: "cardnewForm", local: true do |f| %>
+      <%= f.hidden_field :list_id, value: @list.id %>
       <div class="cardnewForm_title">
         <%= f.label :title %>
         <%= f.text_field :title, autofocus: true, class: "form-control", placeholder: :title %>

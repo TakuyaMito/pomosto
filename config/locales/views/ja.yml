@@ -12,6 +12,7 @@ ja:
     delete: '削除'
     send: '送信'
     delete: '削除'
+    title: 'タイトル'
     message:
       require_login: 'ログインしてください'
   users:
@@ -45,6 +46,9 @@ ja:
     new:
       title: 'card名'
       create: '作成'
+    show:
+      memo: 'メモ'
+      list: 'リスト名'
 
       
 

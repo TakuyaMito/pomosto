@@ -11,5 +11,4 @@ class User < ApplicationRecord
 
   has_many :worktimes
   has_many :lists, dependent: :destroy
-  has_many :cards, dependent: :destroy
 end

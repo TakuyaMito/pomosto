@@ -1,0 +1,18 @@
+<div class="carddetailsPage">
+  <div class="container">
+    <div class="cardContainer">
+      <div class="cardContents_title">
+        <div><%= t("defaults.title") %></div>
+        <h2><%= @card.title %></h2>
+      </div>
+      <div class="cardContents_memo">
+        <div><%= t(".memmo") %></div>
+        <div><%= @card.memo %></div>
+      </div>
+      <div class="cardContents_listStatus">
+        <div><%= t(".list") %></div>
+        <div><%= @card.list.title %></div>
+      </div>
+    </div>
+  </div>
+</div>

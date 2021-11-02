@@ -3,5 +3,4 @@ class Card < ApplicationRecord
   validates :memo, length: { maximum: 1000 }
 
   belongs_to :list
-  belongs_to :user
 end

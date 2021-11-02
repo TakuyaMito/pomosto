@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'timer', to: 'worktimes#new'
 
   resources :lists, only: %i[new create edit update destroy] do
-    resources :cards, only: %i[new create show]
+    resources :cards, only: %i[new create show edit update]
   end
 
   resources :users, only: %i[new create]

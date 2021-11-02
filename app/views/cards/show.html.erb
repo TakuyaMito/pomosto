@@ -1,4 +1,4 @@
-<div class="carddetailsPage">
+<div class="carddetailPage">
   <div class="container">
     <div class="cardContainer">
       <div class="cardContents_title">
@@ -12,6 +12,9 @@
       <div class="cardContents_listStatus">
         <div><%= t(".list") %></div>
         <div><%= @card.list.title %></div>
+      </div>
+      <div class="cardContents_btnArea">
+        <%= link_to t(".edit"), edit_list_card_path(@card.list, @card), class: "edit_btn" %>
       </div>
     </div>
   </div>

@@ -7,6 +7,7 @@ ja:
     register: '新規登録'
     logout: 'ログアウト'
     list_create: 'リスト作成'
+    update: '更新'
     edit: '編集'
     show: '詳細'
     delete: '削除'
@@ -49,6 +50,10 @@ ja:
     show:
       memo: 'メモ'
       list: 'リスト名'
+      edit: '編集する'
+    edit:
+      title: 'card名'
+      update: '更新'
 
       
 

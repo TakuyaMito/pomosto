@@ -1,0 +1,17 @@
+<div class="cardeditPage">
+  <div class="container">
+    <%= form_with model: @card, url: { action: :update }, class: "cardeditForm", local: true do |f| %>
+      <div class="cardeditForm_title">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control", placeholder: :title %>
+      </div>
+      <div class="cardeditForm_memo">
+        <%= f.label :memo %>
+        <%= f.text_area :memo, class: "form-control", placeholder: t("defaults.show")  %>
+      </div>
+      <div class="text-center">
+        <%= f.submit (t ".update"), class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

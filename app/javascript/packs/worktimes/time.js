@@ -14,6 +14,8 @@
     // 開始と等しければカウントダウン開始
     if (action === 'start') {
       startTimer();
+    } else {
+      stopTimer();
     }
   });
 
@@ -58,6 +60,16 @@
     }, 1000);
   }
 
+  function stopTimer() {
+    // 一時停止
+    clearInterval(interval);
+
+    // actionとtextがstartに変更され、activeクラスが削除される
+    mainButton.dataset.action = 'start';
+    mainButton.textContent = 'start';
+    mainButton.classList.remove('active');
+  }
+
   function updateClock() {
     const { remainingTime } = timer;
     // minutes,secondsの数値が常に二桁に表示
@@ -97,6 +109,8 @@
     if (!mode) return;
   
     switchMode(mode);
+    // モードが変更されたらタイマーが停止する
+    stopTimer();
   }
 
   document.addEventListener('DOMContentLoaded', () => {

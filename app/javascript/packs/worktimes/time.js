@@ -98,6 +98,9 @@
     const sec = document.getElementById('js-seconds');
     min.textContent = minutes;
     sec.textContent = seconds;
+
+    const progress = document.getElementById('js-progress');
+    progress.value = timer[timer.mode] * 60 - timer.remainingTime.total;
   }
   
 
@@ -117,6 +120,10 @@
       // 背景更新
     document.querySelector(`[data-mode="${mode}"]`).classList.add('active');
     document.body.style.backgroundColor = `var(--${mode})`;
+    // プログレスバー
+    document
+      .getElementById('js-progress')
+      .setAttribute('max', timer.remainingTime.total);
     // カウントダウン部分を更新
     updateClock();
   }

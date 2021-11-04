@@ -1,5 +1,33 @@
-<div class="topPage">
-  <div class="listWrapper">
-   <%= render partial: 'tops/list', collection: @lists %>
+<div class="row">
+  <div class="topPage">
+    <div class="listWrapper">
+    <%= render partial: 'tops/list', collection: @lists %>
+    </div>
+  </div>
+  <div class="col-md-3">
+  
+    <div class="box">
+      <div class="controls">
+      </div>
+      <div class="main-timer" id="timer">00分00秒</div>
+      <div class="controls">
+        <div id="reset" class="btn btn-mdb-color">リセット</div>
+        <div id="start" class="btn btn-mdb-color">スタート</div>          
+      </div>
+    </div>
+    <div class="box">
+      <p>ポモドーロ回数</p><span id="pomo_number">0</span>
+      <p>タイマーをセットする</p>
+      <%= link_to "ストレッチ", timer_path, id:'link', class:"btn btn-mdb-color" %>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item " id="3sec">3秒<span>動作確認</span></li>
+          <li class="list-group-item " id="10min">10分<span>まずは初めて見る</span></li>
+          <li class="list-group-item" id="25min">25分<span>短く集中</span></li>
+          <li class="list-group-item" id="40min">40分<span>少し長めの集中</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
   </div>
 </div>
+ <%= javascript_pack_tag 'worktimes/timer' %>

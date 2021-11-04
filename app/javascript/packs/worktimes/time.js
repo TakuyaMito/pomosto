@@ -1,8 +1,9 @@
   const timer = {
-    pomodoro: 25,
-    shortBreak: 5,
+    pomodoro: 0.1, // 25
+    shortBreak: 0.1, // 5
     longBreak: 15,
     longBreakInterval: 4,
+    sessions: 0,
   }
 
   let interval;
@@ -44,6 +45,9 @@
     // タイマー終了時間取得
     const endTime = Date.parse(new Date()) + total * 1000;
 
+    // ポモドーロ開始時にsessionsを+1
+    if (timer.mode === 'pomodoro') timer.sessions++;
+
     // タイマー開始するとactionとtextが停止に変更される
     mainButton.dataset.action = 'stop';
     mainButton.textContent = 'stop';
@@ -56,6 +60,20 @@
       total = timer.remainingTime.total;
       if (total <= 0) {
         clearInterval(interval);
+
+        switch (timer.mode) {
+          case 'pomodoro':
+            if (timer.sessions % timer.longBreakInterval === 0) {
+              switchMode('longBreak');
+            } else {
+              switchMode('shortBreak');
+            }
+            break;
+          default:
+            switchMode('pomodoro');
+        }
+
+        startTimer();
       }
     }, 1000);
   }

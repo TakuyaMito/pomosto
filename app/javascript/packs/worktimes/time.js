@@ -4,12 +4,14 @@
     longBreak: 15,
     longBreakInterval: 4,
     sessions: 0,
+    pomo_num: 0,
   }
 
   let interval;
 
   const mainButton = document.getElementById('js-btn');
   mainButton.addEventListener('click', () => {
+
     // ボタンの属性をaction変数に格納
     const { action } = mainButton.dataset;
     // 開始と等しければカウントダウン開始
@@ -47,7 +49,9 @@
 
     // ポモドーロ開始時にsessionsを+1
     if (timer.mode === 'pomodoro') timer.sessions++;
-
+    // ポモドーロ数を+1
+    if (timer.mode === 'pomodoro') timer.pomo_num++;
+    document.getElementById('pomo_number').textContent = timer.pomo_num;
     // タイマー開始するとactionとtextが停止に変更される
     mainButton.dataset.action = 'stop';
     mainButton.textContent = 'stop';
@@ -72,6 +76,24 @@
           default:
             switchMode('pomodoro');
         }
+        // 切り替え時に通知音
+        //webオーディオAPIコンテキストを生成
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        //オシレーターノードを生成
+        const oscillator = audioCtx.createOscillator();
+        //ゲインの生成
+        const gainNode = audioCtx.createGain();
+        //webオーディオAPIコンテキストと接続
+        oscillator.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+        //音量
+        gainNode.gain.value = 0.2;
+        //通知音のタイプ
+        oscillator.type = 'sine';
+        //通知音スタート
+        oscillator.start();
+        //通知音ストップ
+        oscillator.stop(0.2);
 
         startTimer();
       }
@@ -98,6 +120,9 @@
     const sec = document.getElementById('js-seconds');
     min.textContent = minutes;
     sec.textContent = seconds;
+
+    const text = timer.mode === 'pomodoro' ? 'Pomosto' : 'Take a break!';
+    document.title = `${minutes}:${seconds} — ${text}`;
 
     const progress = document.getElementById('js-progress');
     progress.value = timer[timer.mode] * 60 - timer.remainingTime.total;

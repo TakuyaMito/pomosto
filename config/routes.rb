@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :cards, except: %i[index]
   end
 
-  resources :times, only: %i[:index]
+  resources :times, only: [:index, :create, :destroy]
 
   resources :users, only: %i[new create]
   get 'login', to: 'user_sessions#new'

@@ -1,15 +1,62 @@
-
-
   const timer = {
     pomodoro: 25,
     shortBreak: 5,
     longBreak: 15,
     longBreakInterval: 4,
-  };
+  }
+
+  let interval;
+
+  const mainButton = document.getElementById('js-btn');
+  mainButton.addEventListener('click', () => {
+    // ボタンの属性をaction変数に格納
+    const { action } = mainButton.dataset;
+    // 開始と等しければカウントダウン開始
+    if (action === 'start') {
+      startTimer();
+    }
+  });
 
   // タイマー上のボタンを検出、モード切り替え
   const modeButtons = document.querySelector('#js-mode-buttons');
   modeButtons.addEventListener('click', handleMode);
+
+  function getRemainingTime(endTime) {
+    const currentTime = Date.parse(new Date());
+    // 終了時刻と現在時刻の差
+    const difference = endTime - currentTime;
+
+    const total = Number.parseInt(difference / 1000, 10);
+    const minutes = Number.parseInt((total / 60) % 60, 10);
+    const seconds = Number.parseInt(total % 60, 10);
+
+    return {
+      total,
+      minutes,
+      seconds,
+    };
+  }
+
+  function startTimer() {
+    let { total } = timer.remainingTime;
+    // タイマー終了時間取得
+    const endTime = Date.parse(new Date()) + total * 1000;
+
+    // タイマー開始するとactionとtextが停止に変更される
+    mainButton.dataset.action = 'stop';
+    mainButton.textContent = 'stop';
+    mainButton.classList.add('active');
+
+    interval = setInterval(function() {
+      timer.remainingTime = getRemainingTime(endTime);
+      updateClock();
+
+      total = timer.remainingTime.total;
+      if (total <= 0) {
+        clearInterval(interval);
+      }
+    }, 1000);
+  }
 
   function updateClock() {
     const { remainingTime } = timer;
@@ -51,3 +98,7 @@
   
     switchMode(mode);
   }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    switchMode('pomodoro');
+  });

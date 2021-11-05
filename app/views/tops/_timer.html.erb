@@ -1,0 +1,43 @@
+<div class="timer">
+  <div class="button-group mode-buttons" id="js-mode-buttons">
+    <button data-mode="pomodoro" class="button active mode-button" id="js-pomodoro">
+      Pomodoro
+    </button>
+    <button data-mode="shortBreak" class="button mode-button" id="js-short-break">
+      Short break
+    </button>
+    <button data-mode="longBreak" class="button mode-button" id="js-long-break">
+      Long break
+    </button>
+  </div>
+
+  <div class="clock" id="js-clock">
+    <span id="js-minutes">25</span>
+    <span class="separator">:</span>
+    <span id="js-seconds">00</span>
+  </div>
+  
+  <p class="text-center">
+    <span>ポモドーロ:</span>
+    <span id="pomo_number">0</span>
+    <span>回目</span>
+  </p>
+
+  <button class="main-button" data-action="start" id="js-btn">
+    Start
+  </button>
+  <button class="sub-button" data-toggle="modal" data-target="#videoModal">ストレッチ</button>
+
+  <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="100%" height="500" src="/" id="youtube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

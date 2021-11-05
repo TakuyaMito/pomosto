@@ -1,13 +1,10 @@
 Rails.application.routes.draw do
   # root 'worktimes#index'
   root 'tops#index'
-  get 'timer', to: 'worktimes#new'
 
   resources :lists, only: %i[new create edit update destroy] do
     resources :cards, except: %i[index]
   end
-
-  resources :times, only: [:index, :create, :destroy]
 
   resources :users, only: %i[new create]
   get 'login', to: 'user_sessions#new'

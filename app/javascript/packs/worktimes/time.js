@@ -162,6 +162,13 @@ function switchMode(mode) {
   document
     .getElementById('js-progress')
     .setAttribute('max', timer.remainingTime.total);
+
+  // ストレッチボタン切り替え
+  if (timer.mode === 'pomodoro') {
+    $('button.sub-button').hide();
+  } else {
+    $('button.sub-button').show();
+  }
   // カウントダウン部分を更新
   updateClock();
 }

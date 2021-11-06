@@ -1,3 +1,4 @@
+<% content_for(:title, t('.title')) %>
 <div class="listPage">
   <div class="container">
     <%= form_with model: @list, url: { action: :create }, class: "listForm", local: true do |f| %>

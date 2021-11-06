@@ -48,15 +48,16 @@ ja:
     index:   
   cards:
     new:
-      title: 'card名'
+      title: 'Card作成'
       create: '作成'
     show:
+      title: 'Card詳細'
       memo: 'メモ'
       list: 'リスト名'
       edit: '編集する'
       delete: '削除する'
     edit:
-      title: 'card名'
+      title: 'Card編集'
       update: '更新'
 
       

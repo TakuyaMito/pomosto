@@ -1,3 +1,4 @@
+<% content_for(:title, t('.title')) %>
 <div class="cardnewPage">
   <div class="container">
     <%= form_with model: @card, url: { action: :create }, class: "cardnewForm", local: true do |f| %>

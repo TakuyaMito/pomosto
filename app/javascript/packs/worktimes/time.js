@@ -85,6 +85,15 @@ function startTimer() {
           } else {
             switchMode('shortBreak');
           }
+        // プッシュ通知
+        Push.create("Pomosto", {
+          body: "時間になりました。ストレッチをしましょう!",
+          timeout: 4000,
+          onClick: function () {
+              window.focus();
+              this.close();
+          }
+      });          
           break;
         default:
           switchMode('pomodoro');

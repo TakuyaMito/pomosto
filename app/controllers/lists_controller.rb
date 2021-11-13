@@ -32,7 +32,6 @@ class ListsController < ApplicationController
 
   def destroy
     @list.destroy!
-    redirect_to :root
   end
 
   private

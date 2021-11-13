@@ -38,11 +38,11 @@ ja:
       title: 'ストレッチ'
   lists:
     new:
-      title: 'リスト作成'
+      title: 'List作成'
       create: '作成'
       name: 'リスト名'
     edit:
-      title: 'リスト編集'
+      title: 'List編集'
       name: 'リスト名'
   tops:
     index:   
@@ -50,6 +50,7 @@ ja:
     new:
       title: 'Card作成'
       create: '作成'
+      name: 'Card追加'
     show:
       title: 'Card詳細'
       memo: 'メモ'

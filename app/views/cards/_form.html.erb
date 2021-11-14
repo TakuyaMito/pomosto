@@ -1,6 +1,6 @@
 <div class="modal-dialog">
   <div class="modal-content">
-    <%= form_with model: @card, url: [@list, @card], local: true do |f| %>
+    <%= form_with model: @card, url: [@list, @card], local: false do |f| %>
       <%= f.hidden_field :list_id, value: @list.id %>
       <div class="modal-header">
         <h5 class="modal-title"><%= t('.name') %></h5>

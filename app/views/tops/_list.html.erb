@@ -8,7 +8,12 @@
       </div>
     </div>
 
-    <div class="cardWrapper">
+    <div class="cardWrapper" id= "cards-<%= list.id %>">
+      <%
+=begin%>
+ <%= render "tops/card", card: @card %> 
+<%
+=end%>
       <% list.cards.each do |card| %>
         <%= link_to list_card_path(list, card), class: "cardDetail_link" do %> 
           <div class="card">
@@ -21,10 +26,11 @@
           </div>
         <% end %>
       <% end %>
-      <div class="addCard">
+
+    </div>
+          <div class="addCard">
         <i class="far fa-plus-square"></i>
         <%= link_to (t "defaults.add_card"), new_list_card_path(list), class: "addCard_link", remote: true %>
       </div>
-    </div>
   </div>
 </div>

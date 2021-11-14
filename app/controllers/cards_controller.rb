@@ -9,11 +9,7 @@ class CardsController < ApplicationController
   def create
     @list = List.find_by(id: params[:list_id])
     @card = Card.new(card_params)
-    if @card.save
-      redirect_to :root
-    else
-      render :new
-    end
+    @card.save
   end
 
   def show; end

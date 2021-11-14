@@ -7,7 +7,6 @@ class ListsController < ApplicationController
   def create
     @list = current_user.lists.build(list_params)
     @list.save
-
     # respond_to do |format|
     #   if @list.save
     #     format.html { redirect_to @list}

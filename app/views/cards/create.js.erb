@@ -1,0 +1,2 @@
+document.getElementById("cards-<%= @list.id %>").insertAdjacentHTML('beforeend', '<%= j(render partial: "tops/card", locals: {card: @card, list: @list}) %>')
+$("#card-modal").modal("hide");

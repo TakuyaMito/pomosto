@@ -29,7 +29,6 @@ class CardsController < ApplicationController
 
   def destroy
     @card.destroy!
-    redirect_to :root
   end
 
 

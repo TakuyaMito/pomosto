@@ -22,7 +22,7 @@
         <div><%= @card.list.title %></div>
       </div>
       <div class="cardContents_btnArea">
-        <%= link_to (t ".delete"), list_card_path(@card.list, @card), class: "text-danger btn", method: :delete, data: { confirm: (t "defaults.message.delete_confirm")}, remote: true %>
+        <%= link_to (t ".delete"), list_card_path(@card.list, @card), class: "text-danger btn", method: :delete, remote: true %>
       </div>
     </div>
   </div>

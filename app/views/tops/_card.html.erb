@@ -1,4 +1,4 @@
-<%= link_to list_card_path(@card, @list), class: "cardDetail_link" do %> 
+<%= link_to list_card_path(@card, @list), class: "cardDetail_link", remote: true do %> 
   <div class="card" >
     <h3 class="card_title"><%= card.title %></h3>
     <% if card.memo.size > 0 %>

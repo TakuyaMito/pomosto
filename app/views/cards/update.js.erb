@@ -1,0 +1,3 @@
+document.getElementById("card-<%= @card.id %>").innerHTML = '<%= j(render partial: "tops/card", locals: {card: @card, list: @list}) %>'
+
+$("#card-modal").modal("hide");

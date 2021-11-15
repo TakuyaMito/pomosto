@@ -1,11 +1,6 @@
+<% content_for(:title, t('.title')) %>
 <div class="listPage">
   <div class="container">
-    <%= form_with model: @list, url: { action: :create }, class: "listForm", local: true do |f| %>
-      <%= f.label :title %>
-      <%= f.text_field :title, autofocus: true, class: "form-control listName", placeholder: (t ".name") %>
-      <div class="text-center">
-        <%= f.submit (t ".create"), class: "btn btn-primary" %>
-      </div>
-    <% end %>
+    <%= render 'form', {list: @list} %>
   </div>
 </div>

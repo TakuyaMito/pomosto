@@ -6,18 +6,24 @@ class ListsController < ApplicationController
 
   def create
     @list = current_user.lists.build(list_params)
-    if @list.save
-      redirect_to :root
-    else
-      render :new
-    end
+    @list.save
+    # respond_to do |format|
+    #   if @list.save
+    #     format.html { redirect_to @list}
+    #     format.json { render :show, status: :created, location: @list }
+    #     format.js { @status = "success" }
+    #   else
+    #     format.html { render :new }
+    #     format.js { @status = "fail" }
+    #   end
+    # end
   end
 
   def edit; end
 
   def update
     if @list.update(list_params)
-      redirect_to :root
+ 
     else
       render :new
     end
@@ -25,7 +31,6 @@ class ListsController < ApplicationController
 
   def destroy
     @list.destroy!
-    redirect_to :root
   end
 
   private

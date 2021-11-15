@@ -1,11 +1,16 @@
 <progress id="js-progress" value="0"></progress>
 <div class="progress-bar"></div>
+
+<div id="list-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+
+<div id="card-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+
 <div class="page-wraper">
   <div class="row">
     <div class="col-9">
       <div class="topPage">
-        <div class="listWrapper">
-        <%= render partial: "tops/list", collection: @lists %>
+        <div class="listWrapper" id="lists">
+          <%= render partial: "tops/list", collection: @lists %>
         </div>
       </div>
     </div>
@@ -20,4 +25,5 @@
     </div>
   </div>
 </div>
+
  <%= javascript_pack_tag 'worktimes/time' %>

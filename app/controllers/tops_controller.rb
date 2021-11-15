@@ -1,5 +1,5 @@
 class TopsController < ApplicationController
   def index
-    @lists = List.all.includes(:user)
+    @lists = current_user.lists
   end
 end

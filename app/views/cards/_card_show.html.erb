@@ -1,0 +1,31 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title"><%= (t "cards.show.title" ) %></h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+<div class="carddetailPage">
+  <div class="container">
+    <div class="cardContainer">
+      <div class="cardContents_title">
+        <div><%= (t "defaults.title") %></div>
+        <h2><%= @card.title %></h2>
+      </div>
+      <div class="cardContents_memo">
+        <div><%= (t "cards.show.memo") %></div>
+        <div><%= @card.memo %></div>
+      </div>
+      <div class="cardContents_listStatus">
+        <div><%= (t "cards.show.list") %></div>
+        <div><%= @card.list.title %></div>
+      </div>
+      <div class="cardContents_btnArea">
+        <%= link_to (t ".delete"), list_card_path(@card.list, @card), class: "text-danger btn", method: :delete, data: { confirm: (t "defaults.message.delete_confirm")}, remote: true %>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>

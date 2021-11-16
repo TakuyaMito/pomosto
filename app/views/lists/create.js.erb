@@ -1,2 +1,7 @@
-document.getElementById("lists").insertAdjacentHTML('beforeend', '<%= j(render partial: "tops/list", locals: { list: @list}) %>')
-$("#list-modal").modal("hide");
+$("#error_messages").remove()
+<% if @list.errors.present? %>
+  $("#new_list").prepend("<%= j(render('shared/error_messages', object: @list)) %>")
+<% else %>
+  $("#lists").prepend("<%= j(render partial: "tops/list", locals: { list: @list}) %>")  
+  $("#list-modal").modal("hide");
+<% end %>

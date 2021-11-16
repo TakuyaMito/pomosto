@@ -1,6 +1,7 @@
 <div class="modal-dialog">
   <div class="modal-content">
-    <%= form_with model: @card, url: [@list, @card], local: false do |f| %>
+    <%= form_with model: @card, url: [@list, @card], local: false, id: "new_card" do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
       <%= f.hidden_field :list_id, value: @list.id %>
       <div class="modal-header">
         <h5 class="modal-title"><%= t('.name') %></h5>

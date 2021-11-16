@@ -1,3 +1,2 @@
-
 document.getElementById("list-<%= @list.id %>").innerHTML = '<%= j(render partial: "tops/list", locals: { list: @list}) %>'
 $("#list-modal").modal("hide");

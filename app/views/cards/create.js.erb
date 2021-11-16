@@ -1,2 +1,7 @@
-document.getElementById("cards-<%= @list.id %>").insertAdjacentHTML('beforeend', '<%= j(render partial: "tops/card", locals: {card: @card, list: @list}) %>')
-$("#card-modal").modal("hide");
+$("#error_messages").remove()
+<% if @card.errors.present? %>
+  $("#new_card").prepend("<%= j(render('shared/error_messages', object: @card)) %>")
+<% else %>
+  $("#cards-<%= @list.id %>").append("<%= j(render partial: "tops/card", locals: {card: @card, list: @list}) %>")  
+  $("#card-modal").modal("hide");
+<% end %>

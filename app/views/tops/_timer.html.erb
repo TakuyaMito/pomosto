@@ -1,14 +1,13 @@
-
 <div class="timer">
   <div class="button-group mode-buttons" id="js-mode-buttons">
     <button data-mode="pomodoro" class="button active mode-button" id="js-pomodoro">
-      Pomodoro
+      <%= (t "defaults.pomodoro") %>
     </button>
     <button data-mode="shortBreak" class="button mode-button" id="js-short-break">
-      Short break
+      <%= (t "tops.index.shortbreak") %>
     </button>
     <button data-mode="longBreak" class="button mode-button" id="js-long-break">
-      Long break
+      <%= (t "tops.index.longbreak") %>
     </button>
   </div>
   <div class="clock" id="js-clock">
@@ -19,16 +18,15 @@
     </div>
   </div>
   <p class="text-center">
-    <span>ポモドーロ:</span>
+    <span><%= (t "tops.index.pomodoro_number") %>:</span>
     <span id="pomo_number">0</span>
-    <span>回目</span>
+    <span><%= (t "tops.index.times") %></span>
   </p>
   
-
   <button class="main-button" data-action="start" id="js-btn">
-    Start
+    <%= (t "defaults.start") %>
   </button>
-  <button class="sub-button" data-toggle="modal" data-target="#videoModal" id="btn1">ストレッチ</button>
+  <button class="sub-button" data-toggle="modal" data-target="#videoModal" id="btn1"><%= (t "tops.index.strech") %></button>
 
   <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg" role="document">

@@ -1,31 +1,30 @@
 <% content_for(:title, t('.title')) %>
-<div class="container">
-  <div class="row">
-		<div class="col-md-6 col-md-offset-4 mx-auto">
-			<div class="box">
-        <span class="input-group-addon addon-twitter">
-          <p><i class="fas fa-desktop"></i></i><%= t ".title" %></p>
-        </span>
-				<%= form_with url: login_path, local: true do |f| %>
-					<div class="divider-form"></div>
-					<div class="form-group">
-          <p><i class="far fa-envelope"></i>
-            <%= f.label :email, User.human_attribute_name(:email) %></p>
-            <%= f.text_field :email, class: "form-control", id: "exampleInputEmail1" %>
-					</div>
-
-					<div class="divider-form"></div>
-					<div class="form-group">
-          <p><i class="fa fa-lock"></i>
-            <%= f.label :password, User.human_attribute_name(:password) %></p>
-            <%= f.password_field :password, class: "form-control", id:"exampleInputPassword1" %>
-					</div>
-
-					<div class="divider-form"></div>
-            <%= f.submit (t "defaults.login"), class: "btn-block btn btn-lg btn-primary" %>
-					<p class="text-center">登録はお済みですか？ <%= link_to (t "defaults.register"), new_user_path, class: "nav-item nav-link" %></p>
-        <% end %>
+<div class="col-md-6 col-md-offset-4 mx-auto">
+	<div class="box">
+		<span class="input-group-addon addon-twitter">
+			<p><i class="fas fa-desktop"></i></i><%= t ".title" %></p>
+		</span>
+		<%= form_with url: login_path, local: true do |f| %>
+			<div class="divider-form"></div>
+			<div class="form-group">
+			<p><i class="far fa-envelope"></i>
+				<%= f.label :email, User.human_attribute_name(:email) %></p>
+				<%= f.text_field :email, class: "form-control", id: "exampleInputEmail1" %>
 			</div>
-		</div>
+
+			<div class="divider-form"></div>
+			<div class="form-group">
+			<p><i class="fa fa-lock"></i>
+				<%= f.label :password, User.human_attribute_name(:password) %></p>
+				<%= f.password_field :password, class: "form-control", id:"exampleInputPassword1" %>
+			</div>
+
+			<div class="divider-form"></div>
+				<%= f.submit (t "defaults.login"), class: "btn-block btn btn-lg btn-primary" %>
+			<p class="text-center">
+				<%= (t ".to_register_page") %>
+				<%= link_to (t ".register"), new_user_path, class: "nav-item nav-link" %>
+			</p>
+		<% end %>
 	</div>
 </div>

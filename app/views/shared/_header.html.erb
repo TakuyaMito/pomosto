@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-expand-sm fixed-top  navbar-dark bg-secondary">
+  <nav class="navbar navbar-expand-sm fixed-top  navbar-dark" >
     <%= link_to "Pomosto", root_path, class: "navbar-brand"%>
     <button class="navbar-toggler" type="button"
         data-toggle="collapse"
@@ -12,7 +12,6 @@
     <div class="collapse navbar-collapse" id="navmenu1">
       <div class="navbar-nav ml-auto main-nav align-items-center">
         <%= link_to (t "defaults.list_create"), new_list_path, class: "nav-item nav-link", remote: true %>
-
         <%= link_to (t "defaults.logout"), logout_path, method: :delete, class: "nav-item nav-link" %>
       </div>
     </div>

@@ -1,4 +1,3 @@
-
 $(document).on('turbolinks:load', function() { 
   var bb = document.getElementById("btn1");
   bb.addEventListener("click", function() {
@@ -12,10 +11,8 @@ $(document).on('turbolinks:load', function() {
     urls[3] = 'https://www.youtube.com/embed/f2_PLjc6iqs?start=20&end=313';
     urls[4] = 'https://www.youtube.com/embed/3cN0XATgV8U?end=257';
     ifm.src = urls[r];
-    
   })
 });
-
 
 const timer = {
   pomodoro: 25,
@@ -68,12 +65,9 @@ function startTimer() {
 
   // ポモドーロ開始時にsessionsを+1
   if (timer.mode === 'pomodoro') timer.sessions++;
-  // ポモドーロ数を+1
-  if (timer.mode === 'pomodoro') timer.pomo_num++;
-  document.getElementById('pomo_number').textContent = timer.pomo_num;
   // タイマー開始するとactionとtextが停止に変更される
   mainButton.dataset.action = 'stop';
-  mainButton.textContent = 'stop';
+  mainButton.textContent = 'ストップ';
   mainButton.classList.add('active');
 
   interval = setInterval(function() {
@@ -83,6 +77,9 @@ function startTimer() {
     total = timer.remainingTime.total;
     if (total <= 0) {
       clearInterval(interval);
+      // ポモドーロ時間が0になったらポモドーロ数を+1
+      if (timer.mode === 'pomodoro') timer.pomo_num++;
+      document.getElementById('pomo_number').textContent = timer.pomo_num;
 
       switch (timer.mode) {
         case 'pomodoro':
@@ -134,7 +131,7 @@ function stopTimer() {
 
   // actionとtextがstartに変更され、activeクラスが削除される
   mainButton.dataset.action = 'start';
-  mainButton.textContent = 'start';
+  mainButton.textContent = 'スタート';
   mainButton.classList.remove('active');
 }
 

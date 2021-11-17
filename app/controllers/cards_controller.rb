@@ -14,23 +14,9 @@ class CardsController < ApplicationController
 
   def show; end
 
-  def edit
-    @lists = List.where(user: current_user)
-  end
-
-  def update
-    @lists = List.where(user: current_user)
-    if @card.update(card_params)
-      redirect_to :root
-    else
-      render :edit
-    end
-  end
-
   def destroy
     @card.destroy!
   end
-
 
   private
 

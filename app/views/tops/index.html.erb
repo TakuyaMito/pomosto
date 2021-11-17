@@ -2,25 +2,20 @@
 <div class="progress-bar"></div>
 
 <div id="list-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
-
 <div id="card-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
 
-  <div class="row">
-    <div class="col-9">
-      <div class="topPage">
-        <div class="listWrapper" id="lists">
-          <%= render partial: "tops/list", collection: @lists %>
-        </div>
-      </div>
-    </div>
-    <div class="col-3 shadow-lg">
-      <div sidebar_fixed">
-
-
-           <%= render partial: "tops/timer" %>
-
-
+<div class="row">
+  <div class="col-9">
+    <div class="topPage">
+      <div class="listWrapper" id="lists">
+        <%= render partial: "tops/list", collection: @lists %>
       </div>
     </div>
   </div>
- <%= javascript_pack_tag 'worktimes/time' %>
+  <div class="col-3 shadow-lg">
+    <div sidebar_fixed">
+      <%= render partial: "tops/timer" %>
+    </div>
+  </div>
+</div>
+<%= javascript_pack_tag 'worktimes/time' %>

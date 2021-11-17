@@ -4,7 +4,6 @@ ja:
     guest_login: 'ゲストログイン'
     signup: 'サインアップ'
     mypage: 'マイページ'
-    register: '新規登録'
     logout: 'ログアウト'
     list_create: 'リスト作成'
     update: '更新'
@@ -15,6 +14,9 @@ ja:
     delete: '削除'
     title: 'タイトル'
     add_card: 'カードを追加'  
+    start: 'スタート'
+    stop: 'ストップ'
+    pomodoro: 'ポモドーロ'
     message:
       require_login: 'ログインしてください'
       delete_confirm: '削除しますか？'
@@ -22,12 +24,16 @@ ja:
     new:
       title: 'ユーザー登録'
       to_login_page: 'ログインページへ'
+      registered: 'すでにアカウントをお持ちですか？'
+      signup: '新規登録'
     create:
       success: 'ユーザー登録が完了しました'
       fail: 'ユーザー登録に失敗しました'
   user_sessions:
     new:
       title: 'ログイン'
+      to_register_page: '登録はお済みですか？'
+      register: '新規登録'
     create:
       success: 'ログインしました'
       fail: 'ログインに失敗しました'
@@ -45,22 +51,22 @@ ja:
       title: 'List編集'
       name: 'リスト名'
   tops:
-    index:   
+    index:
+      strech: 'ストレッチ'
+      times: '回'
+      shortbreak: '5分休憩'
+      longbreak: '15分休憩'
+      pomodoro_number: 'ポモドーロ数'
   cards:
     new:
-      title: 'Card作成'
+      title: 'カードタイトル'
       create: '作成'
-      name: 'Card追加'
+      name: 'カード追加'
     show:
-      title: 'Card詳細'
+      title: 'カード詳細'
       memo: 'メモ'
       list: 'リスト名'
       edit: '編集する'
-      delete: '削除する'
     edit:
-      title: 'Card編集'
+      title: 'カード編集'
       update: '更新'
-
-      
-
-

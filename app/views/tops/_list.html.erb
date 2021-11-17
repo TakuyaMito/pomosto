@@ -7,15 +7,8 @@
         <%= link_to content_tag(:i, "", class: "fas fa-pen" ), edit_list_path(list), remote: true %>
       </div>
     </div>
-
     <div class="cardWrapper" id= "cards-<%= list.id %>">
-      <%
-=begin%>
- <%= render "tops/card", card: @card %> 
-<%
-=end%>
       <% list.cards.each do |card| %>
-        
         <%= link_to list_card_path(list, card), class: "cardDetail_link", remote: true do %> 
           <div class="card" id= "card-<%= card.id %>" >
             <h3 class="card_title"><%= card.title %></h3>
@@ -28,9 +21,9 @@
         <% end %>
       <% end %>
     </div>
-          <div class="addCard">
-        <i class="far fa-plus-square"></i>
-        <%= link_to (t "defaults.add_card"), new_list_card_path(list), class: "addCard_link", remote: true %>
-      </div>
+    <div class="addCard">
+      <i class="far fa-plus-square"></i>
+      <%= link_to (t "defaults.add_card"), new_list_card_path(list), class: "addCard_link", remote: true %>
+    </div>
   </div>
 </div>

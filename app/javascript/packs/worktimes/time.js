@@ -18,8 +18,8 @@ $(document).on('turbolinks:load', function() {
 
 
 const timer = {
-  pomodoro: 0.1, // 25
-  shortBreak: 0.1, // 5
+  pomodoro: 25,
+  shortBreak: 5,
   longBreak: 15,
   longBreakInterval: 4,
   sessions: 0,

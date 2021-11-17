@@ -14,7 +14,7 @@ ja:
     send: '送信'
     delete: '削除'
     title: 'タイトル'
-    add_card: 'さらにカードを追加'  
+    add_card: 'カードを追加'  
     message:
       require_login: 'ログインしてください'
       delete_confirm: '削除しますか？'

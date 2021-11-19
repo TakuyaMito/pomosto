@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :list do
     title { "MyString" }
-    user { nil }
+    association :user
   end
 end

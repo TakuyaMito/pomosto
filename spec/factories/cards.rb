@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :card do
-    title { "MyString" }
-    memo { "MyText" }
-    list { nil }
+    title { "card_title" }
+    memo { "card_memo" }
+    association :list
   end
 end

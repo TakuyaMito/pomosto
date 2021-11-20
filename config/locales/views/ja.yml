@@ -70,3 +70,6 @@ ja:
     edit:
       title: 'カード編集'
       update: '更新'
+  homes:
+    index:
+      start: '始める'

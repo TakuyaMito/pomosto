@@ -78,5 +78,6 @@ ja:
   profiles:
     show:
       title: 'プロフィール'
+      total_pomo: '合計ポモドーロ数'
     edit:
       title: 'プロフィール編集'

@@ -1,7 +1,9 @@
 class ProfilesController < ApplicationController
   before_action :set_user, only: %i[edit update]
 
-  def show; end
+  def show
+    @worktime_count = Worktime.where(user_id: current_user.id).count
+  end
 
   def edit; end
 

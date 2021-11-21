@@ -81,7 +81,7 @@ function startTimer() {
       if (timer.mode === 'pomodoro') timer.pomo_num++;
       document.getElementById('pomo_number').textContent = timer.pomo_num;
 
-
+      if (timer.mode === 'pomodoro'){
       var params = 1;
       $.ajax({
         url: "/worktimes",
@@ -90,14 +90,16 @@ function startTimer() {
         beforeSend: function(xhr) {
           xhr.setRequestHeader("X-CSRF-Token", $('meta[name="csrf-token"]').attr('content'))
         },
-        data : params
+        data: {  // 送信するデータをハッシュ形式で指定
+          worktime: {pomo_time: params}
+        },
   
-    }).done(function(data) {
+    }).done(function(worktime) {
                       alert("ok");
     }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
                      alert("error");
     })
-
+  }
 
 
      

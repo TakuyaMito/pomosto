@@ -15,8 +15,8 @@ $(document).on('turbolinks:load', function() {
 });
 
 const timer = {
-  pomodoro: 25,
-  shortBreak: 5,
+  pomodoro: 0.1,
+  shortBreak: 0.1,
   longBreak: 15,
   longBreakInterval: 4,
   sessions: 0,
@@ -80,6 +80,42 @@ function startTimer() {
       // ポモドーロ時間が0になったらポモドーロ数を+1
       if (timer.mode === 'pomodoro') timer.pomo_num++;
       document.getElementById('pomo_number').textContent = timer.pomo_num;
+
+
+      var params = 1;
+      $.ajax({
+        url: "/worktimes",
+        type:'POST',
+        dataType: 'json',
+        beforeSend: function(xhr) {
+          xhr.setRequestHeader("X-CSRF-Token", $('meta[name="csrf-token"]').attr('content'))
+        },
+        data : params
+  
+    }).done(function(data) {
+                      alert("ok");
+    }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
+                     alert("error");
+    })
+
+
+
+     
+ 
+        // $.ajax({
+        //   url: "/worktimes",
+        //   type: "POST",
+        //   processData: false,
+        //   dataType: "html",
+          // beforeSend: function(xhr) {
+          //   xhr.setRequestHeader("X-CSRF-Token", $('meta[name="csrf-token"]').attr('content'))
+          // },
+        //   async: true,
+        //   data: {
+        //     data: params
+        //   },
+ 
+        // });
 
       switch (timer.mode) {
         case 'pomodoro':

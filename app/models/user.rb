@@ -9,6 +9,6 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :name, presence: true
 
-  has_many :worktimes
+  has_many :worktimes, dependent: :destroy
   has_many :lists, dependent: :destroy
 end

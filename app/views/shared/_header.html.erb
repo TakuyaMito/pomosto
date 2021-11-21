@@ -5,9 +5,6 @@
   <% else %>
     <%= link_to "Pomosto", root_path, class: "navbar-brand"%>
   <% end %>
-  
-
-  
     <button class="navbar-toggler" type="button"
         data-toggle="collapse"
         data-target="#navmenu1"
@@ -18,7 +15,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navmenu1">
       <div class="navbar-nav ml-auto main-nav align-items-center">
+      <% unless request.path.include?("profile") %>
         <%= link_to (t "defaults.list_create"), new_list_path, class: "nav-item nav-link", remote: true %>
+      <% end %>
         <%= link_to (t "defaults.mypage"), profile_path, class: "nav-item nav-link" %>        
         <%= link_to (t "defaults.logout"), logout_path, method: :delete, class: "nav-item nav-link" %>
       </div>

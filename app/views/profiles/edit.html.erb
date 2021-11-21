@@ -1,0 +1,28 @@
+<% content_for(:title, t('.title')) %>
+
+<div class="col-md-6 col-md-offset-4 mx-auto">
+  <div class="box">
+    <span class="input-group-addon addon-twitter">
+      <p><i class="fas fa-desktop"></i></i><%= t('.title') %></p>
+    </span>
+    <%= form_with model: @user, url: profile_path, local: true do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <div class="divider-form"></div>
+      <div class="form-group">
+      <p><i class="far fa-envelope"></i>
+        <%= f.label :email, User.human_attribute_name(:email) %></p>
+        <%= f.text_field :email, class: "form-control", id: "exampleInputEmail1" %>
+      </div>
+
+      <div class="divider-form"></div>
+      <div class="form-group">
+      <p><i class="fas fa-pen"></i>
+        <%= f.label :name, User.human_attribute_name(:name) %></p>
+        <%= f.text_field :name, class: "form-control", id: "exampleInputEmail1" %>
+      </div>
+
+      <div class="divider-form"></div>
+        <%= f.submit  class: "btn-block btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

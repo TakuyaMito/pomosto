@@ -20,6 +20,8 @@ ja:
     message:
       require_login: 'ログインしてください'
       delete_confirm: '削除しますか？'
+      update: "%{item}を更新しました"
+      not_updated: "%{item}を更新できませんでした"
   users:
     new:
       title: 'ユーザー登録'
@@ -73,3 +75,8 @@ ja:
   homes:
     index:
       start: '始める'
+  profiles:
+    show:
+      title: 'プロフィール'
+    edit:
+      title: 'プロフィール編集'

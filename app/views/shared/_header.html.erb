@@ -1,6 +1,13 @@
 <header>
   <nav class="navbar navbar-expand-sm fixed-top  navbar-dark" >
-  <div class="navbar-brand">Pomosto</div>
+  <% unless request.path.include?("profile") %>
+    <div class="navbar-brand">Pomosto</div>
+  <% else %>
+    <%= link_to "Pomosto", root_path, class: "navbar-brand"%>
+  <% end %>
+  
+
+  
     <button class="navbar-toggler" type="button"
         data-toggle="collapse"
         data-target="#navmenu1"

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :cards, except: %i[index]
   end
 
+  resources :worktimes, only: %i[new create]
   resources :users, only: %i[new create]
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'

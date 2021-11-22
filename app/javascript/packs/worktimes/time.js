@@ -191,9 +191,9 @@ function switchMode(mode) {
 
   // ストレッチボタン切り替え
   if (timer.mode === 'pomodoro') {
-    $('button.sub-button').hide();
+    $('button.btn-success').hide();
   } else {
-    $('button.sub-button').show();
+    $('button.btn-success').show();
   }
   // カウントダウン部分を更新
   updateClock();

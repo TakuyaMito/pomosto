@@ -20,26 +20,9 @@ bb.addEventListener("click", function() {
   })
 })
 
-
-// var ifm = document.getElementById('youtube');
-// var urls = [
-//   'https://www.youtube.com/embed/JVOu8FzP94k?start=11&end541',
-//   'https://www.youtube.com/embed/2ve-gyPA6d0?start=22&end=257',
-//   'https://www.youtube.com/embed/zS_jc5j9wRQ?start=21&end=257',
-//   'https://www.youtube.com/embed/f2_PLjc6iqs?start=20&end=313',
-//   'https://www.youtube.com/embed/3cN0XATgV8U?end=257'
-// ]
-// var r = Math.floor(Math.random() * urls.length);
-// ifm.src = urls[r];
-
-
-// $('#videoModal').on('hidden.bs.modal', function (e) {
-//   player.stopVideo();
-// })
-
 const timer = {
-  pomodoro: 0.1,
-  shortBreak: 0.1,
+  pomodoro: 25,
+  shortBreak: 5,
   longBreak: 15,
   longBreakInterval: 4,
   sessions: 0,

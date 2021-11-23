@@ -10,7 +10,7 @@ RSpec.describe "UserSessions", type: :system do
         fill_in "email", with: user.email
         fill_in "password",	with: "password"
         click_button "ログイン"
-        expect(current_path).to eq root_path
+        expect(current_path).to eq top_path
         expect(page).to have_content "ログインしました"
       end
     end
@@ -32,7 +32,7 @@ RSpec.describe "UserSessions", type: :system do
         login(user)
         click_link "ログアウト"
         expect(page).to have_content "ログアウトしました"
-        expect(current_path).to eq login_path
+        expect(current_path).to eq root_path
       end
     end
   end

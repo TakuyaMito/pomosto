@@ -1,21 +1,28 @@
 var bb = document.getElementById("btn1");
 bb.addEventListener("click", function() {
-  var c = 5; //ランダムに表示するiframe内URLの数
+  var c = 10; //ランダムに表示するiframe内URLの数
   var ifm = document.getElementById('youtube');
   var r = Math.floor(Math.random() * c);
   var urls = new Array();
-  urls[0] = 'https://www.youtube.com/embed/JVOu8FzP94k?start=11&end541';
+  urls[0] = 'https://www.youtube.com/embed/JVOu8FzP94k?start=11&end=342';
   urls[1] = 'https://www.youtube.com/embed/2ve-gyPA6d0?start=22&end=257';
   urls[2] = 'https://www.youtube.com/embed/zS_jc5j9wRQ?start=21&end=257';
   urls[3] = 'https://www.youtube.com/embed/f2_PLjc6iqs?start=20&end=313';
   urls[4] = 'https://www.youtube.com/embed/3cN0XATgV8U?end=257';
+  urls[5] = 'https://www.youtube.com/embed/pWury3ddx4A?end=187';
+  urls[6] = 'https://www.youtube.com/embed/zb4aLamf8z8?end=187';
+  urls[7] = 'https://www.youtube.com/embed/lQSMIjuHRHw?end=179';
+  urls[8] = 'https://www.youtube.com/embed/oWHPQgdqVcQ?end=190';
+  urls[9] = 'https://www.youtube.com/embed/LRBoauVXt2A?start=9&end=310';
   ifm.src = urls[r];
+  $('#videoModal').on('hidden.bs.modal', function () {
+    $("#youtube").attr('ifm.src', ''); 
+  })
 })
 
-
 const timer = {
-  pomodoro: 0.1,
-  shortBreak: 0.1,
+  pomodoro: 25,
+  shortBreak: 5,
   longBreak: 15,
   longBreakInterval: 4,
   sessions: 0,
@@ -192,8 +199,10 @@ function switchMode(mode) {
   // ストレッチボタン切り替え
   if (timer.mode === 'pomodoro') {
     $('button.btn-success').hide();
+    $('p.caution').hide();
   } else {
     $('button.btn-success').show();
+    $('p.caution').show();
   }
   // カウントダウン部分を更新
   updateClock();

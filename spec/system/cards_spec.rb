@@ -10,12 +10,12 @@ RSpec.describe "cards", type: :system do
     describe "カードの新規作成" do
       context "フォームの入力値が正常" do
         it "cardの新規登録が成功する" do
-          visit root_path
+          visit top_path
           click_link("カードを追加")
           fill_in "card[title]", with: "title"
           fill_in "card[memo]", with: "memo"
           click_button("登録する")
-          expect(current_path).to eq root_path
+          expect(current_path).to eq top_path
           expect(page).to have_content "title"
           expect(page).to have_css ".card_detail"
         end
@@ -23,12 +23,12 @@ RSpec.describe "cards", type: :system do
 
       context "メモを空欄で登録" do
         it "cardの新規登録が成功する" do
-          visit root_path
+          visit top_path
           click_link("カードを追加")
           fill_in "card[title]", with: "title"
           fill_in "card[memo]", with: ""
           click_button("登録する")
-          expect(current_path).to eq root_path
+          expect(current_path).to eq top_path
           expect(page).to have_content "title"
           expect(page).not_to have_css ".card_detail"
         end
@@ -36,13 +36,13 @@ RSpec.describe "cards", type: :system do
 
       context "タイトルが空白" do
         it "カードの新規登録が失敗する" do
-          visit root_path
+          visit top_path
           click_link("カードを追加")
           fill_in "card[title]", with: " "
           fill_in "card[memo]", with: "memo"
           click_button("登録する")
           expect(page).to have_content "タイトルを入力してください"
-          expect(current_path).to eq root_path        
+          expect(current_path).to eq top_path        
         end
       end
     end
@@ -53,12 +53,12 @@ RSpec.describe "cards", type: :system do
     let!(:card) { create(:card, list: list) }
     before do
       login(user)
-      visit root_path
+      visit top_path
     end
 
     it "cardの詳細が表示されること" do
       click_link(card.title)
-      expect(current_path).to eq root_path
+      expect(current_path).to eq top_path
       expect(page).to have_content card.title
       expect(page).to have_content card.memo
       expect(page).to have_content card.list.title
@@ -70,7 +70,7 @@ RSpec.describe "cards", type: :system do
       expect(page).to have_content card.memo
       expect(page).to have_content card.list.title
       find('a', text: "削除").click 
-      expect(current_path).to eq root_path
+      expect(current_path).to eq top_path
       expect(page).not_to have_content card.title
     end
   end

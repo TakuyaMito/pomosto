@@ -1,16 +1,16 @@
 <div class="timer">
-  <div class="button-group mode-buttons" id="js-mode-buttons">
-    <button data-mode="pomodoro" class="button active mode-button" id="js-pomodoro">
+  <div class="button-group mode-buttons mt-3" id="js-mode-buttons">
+    <button data-mode="pomodoro" class="btn btn-block btn-outline-light" id="js-pomodoro">
       <%= (t "defaults.pomodoro") %>
     </button>
-    <button data-mode="shortBreak" class="button mode-button" id="js-short-break">
+    <button data-mode="shortBreak" class="btn btn-block btn-outline-light" id="js-short-break">
       <%= (t "tops.index.shortbreak") %>
     </button>
-    <button data-mode="longBreak" class="button mode-button" id="js-long-break">
+    <button data-mode="longBreak" class="btn btn-block btn-outline-light" id="js-long-break">
       <%= (t "tops.index.longbreak") %>
     </button>
   </div>
-  <div class="clock" id="js-clock">
+  <div class="clock text-white" id="js-clock">
     <div class="timearea">
       <span id="js-minutes">25</span>
       <span class="separator">:</span>
@@ -23,21 +23,11 @@
     <span><%= (t "tops.index.times") %></span>
   </p>
   
-  <button class="main-button" data-action="start" id="js-btn">
+  <button class="btn btn-lg btn-block btn-outline-light" data-action="start" id="js-btn">
     <%= (t "defaults.start") %>
   </button>
-  <button class="sub-button" data-toggle="modal" data-target="#videoModal" id="btn1"><%= (t "tops.index.strech") %></button>
-
-  <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-body bg-white">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe width="100%" height="500" src="/" id="youtube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <button class="btn btn-lg btn-block btn-success" data-toggle="modal" data-target="#videoModal" id="btn1">
+    <%= (t "tops.index.strech") %>
+  </button>
 </div>
 

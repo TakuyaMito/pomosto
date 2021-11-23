@@ -78,6 +78,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    chartkick (4.1.2)
     childprocess (4.1.0)
     coderay (1.1.3)
     concurrent-ruby (1.1.9)
@@ -111,6 +112,8 @@ GEM
     ffi (1.15.4)
     globalid (0.5.2)
       activesupport (>= 5.0)
+    groupdate (5.2.2)
+      activesupport (>= 5)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.3)
@@ -274,7 +277,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     thor (1.1.0)
     tilt (2.0.10)
     tzinfo (2.0.4)
@@ -310,7 +312,9 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  chartkick
   factory_bot_rails
+  groupdate
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg
@@ -330,7 +334,6 @@ DEPENDENCIES
   selenium-webdriver
   sorcery
   spring
-  sqlite3 (~> 1.4)
   tzinfo-data
   web-console (>= 4.1.0)
   webdrivers

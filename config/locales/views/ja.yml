@@ -79,5 +79,8 @@ ja:
     show:
       title: 'プロフィール'
       total_pomo: '合計ポモドーロ数'
+      day_pomo: '今日のポモドーロ数'
+      week_pomo: '日別ポモドーロ数'
+      no_pomo: 'まだ記録がありません..'
     edit:
       title: 'プロフィール編集'

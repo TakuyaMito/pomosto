@@ -3,7 +3,7 @@
   <% unless request.path.include?("profile") %>
     <div class="navbar-brand">Pomosto</div>
   <% else %>
-    <%= link_to "Pomosto", root_path, class: "navbar-brand"%>
+    <%= link_to "Pomosto", top_path, class: "navbar-brand"%>
   <% end %>
     <button class="navbar-toggler" type="button"
         data-toggle="collapse"

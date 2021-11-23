@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true
   validates :email, presence: true
-  validates :name, presence: true
+  validates :name, presence: truvalidates :reset_password_token, presence: true, uniqueness: true, allow_nil: true
 
   has_many :worktimes, dependent: :destroy
   has_many :lists, dependent: :destroy

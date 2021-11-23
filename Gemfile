@@ -5,8 +5,8 @@ ruby '3.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3'
-# Use sqlite3 as the database for Active Record
-# gem 'sqlite3', '~> 1.4'
+# Use pg as the database for Active Record
+# gem 'pg', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -20,6 +20,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'sorcery'
 gem 'rails-i18n'
 gem 'chartkick'
+gem 'groupdate'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -38,7 +39,6 @@ group :development, :test do
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec'
-  gem 'sqlite3', '~> 1.4'
   # テスト
   gem 'rspec-rails', '~> 4.1.0'
   gem 'factory_bot_rails'

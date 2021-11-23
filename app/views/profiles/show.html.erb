@@ -1,30 +1,60 @@
 <% content_for(:title, t('.title')) %>
-<div class="col-md-6 col-md-offset-4 mx-auto">
+<div class="col-md-8 col-md-offset-4 mx-auto">
 	<div class="box">
 		<span class="input-group-addon addon-twitter">
-			<p><i class="fas fa-desktop"></i><%= t ".title" %><%= link_to t('defaults.edit'), edit_profile_path, class: 'btn btn-outline-secondary float-right p-1' %>
-      </p>
-
+      <div class="row">
+        <div class="col">
+          <p><i class="fas fa-desktop"></i><%= t ".title" %></p>
+        </div>
+        <div class="col"></div>
+        <div class="col">
+			    <%= link_to t('defaults.edit'), edit_profile_path, class: 'btn btn-outline-secondary p-1' %>          
+        </div>
+      </div>
 		</span>
+
     <div class="divider-form"></div>
-    <div class="form-group">
-    <p><i class="far fa-envelope"></i>
-      <%= t(User.human_attribute_name(:email)) %></p>
-      <%= current_user.email %>
+    <div class="row">
+      <div class="col">
+        <p><i class="fas fa-pen"></i><%= t(User.human_attribute_name(:name)) %></p>
+      </div>
+      <div class="col"></div>
+      <div class="col">
+        <p><%= current_user.name %></p>
+      </div>
     </div>
 
     <div class="divider-form"></div>
-    <div class="form-group">
-    <p><i class="fas fa-pen"></i>
-      <%= t(User.human_attribute_name(:name)) %></p>
-      <%= current_user.name %>
+      <div class="row">
+        <div class="col">
+          <p><i class="fas fa-stopwatch"></i><%= (t ".total_pomo") %></p>        
+        </div>
+        <div class="col"></div>
+        <div class="col">
+          <p><%= @worktime_count %>回</p></div>
+      </div>
+
+    <div class="divider-form"></div>
+    <div class="row">
+      <div class="col">
+        <p><i class="fab fa-twitter"></i><%= (t ".day_pomo") %></p>
+      </div>
+      <div class="col"></div>
+      <div class="col">
+        <p><%= @pomo_time %>回</p>
+      </div>
     </div>
 
     <div class="divider-form"></div>
-    <div class="form-group">
-    <p><i class="fas fa-stopwatch"></i>
-      <%= (t ".total_pomo") %></p>
-      <%= @worktime_count %>
+    <div class="row">
+      <div class="col">
+        <p><i class="fas fa-calendar-week"></i><%= (t ".week_pomo") %></p>
+      </div>
     </div>
+    <% if @work_time.present? %>
+      <%= column_chart @work_time.group_by_day(:created_at, last: 7, format: "%m/%d").count,  height: "200px", max: 12, colors: ["#00cc00", "#009900", "#006600"], suffix: "回" %>
+    <% else %>
+      <p><%= (t ".no_pomo") %></P>
+    <% end %>
 	</div>
 </div>

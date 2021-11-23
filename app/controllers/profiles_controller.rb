@@ -2,7 +2,12 @@ class ProfilesController < ApplicationController
   before_action :set_user, only: %i[edit update]
 
   def show
+    # 今日のポモドーロ数
+    @pomo_time = current_user.worktimes.where("created_at >= ?", Date.today).count
+    # 合計ポモドーロ数
     @worktime_count = Worktime.where(user_id: current_user.id).count
+    # chartkick
+    @work_time = current_user.worktimes
   end
 
   def edit; end

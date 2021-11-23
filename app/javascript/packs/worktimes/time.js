@@ -14,8 +14,8 @@ bb.addEventListener("click", function() {
 
 
 const timer = {
-  pomodoro: 25,
-  shortBreak: 5,
+  pomodoro: 0.1,
+  shortBreak: 0.1,
   longBreak: 15,
   longBreakInterval: 4,
   sessions: 0,

@@ -17,6 +17,7 @@ ja:
     start: 'スタート'
     stop: 'ストップ'
     pomodoro: 'ポモドーロ'
+    caution: '※ストレッチ動画を停止してからモーダルを閉じてください。'
     message:
       require_login: 'ログインしてください'
       delete_confirm: '削除しますか？'

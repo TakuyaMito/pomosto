@@ -18,6 +18,7 @@ ja:
     stop: 'ストップ'
     pomodoro: 'ポモドーロ'
     caution: '※ストレッチ動画を停止してからモーダルを閉じてください。'
+    password_reset: 'パスワードリセット'
     message:
       require_login: 'ログインしてください'
       delete_confirm: '削除しますか？'
@@ -39,6 +40,7 @@ ja:
       title: 'ログイン'
       to_register_page: '登録はお済みですか？'
       register: '新規登録'
+      password_forget: 'パスワードをお忘れの方はこちら'
     create:
       success: 'ログインしました'
       fail: 'ログインに失敗しました'

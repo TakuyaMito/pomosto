@@ -18,11 +18,14 @@ ja:
     stop: 'ストップ'
     pomodoro: 'ポモドーロ'
     caution: '※ストレッチ動画を停止してからモーダルを閉じてください。'
+    password_reset: 'パスワードリセット'
     message:
       require_login: 'ログインしてください'
       delete_confirm: '削除しますか？'
       update: "%{item}を更新しました"
       not_updated: "%{item}を更新できませんでした"
+      sent: "パスワードリセット手順を送信しました"
+      idid: "パスワードを変更しました"
   users:
     new:
       title: 'ユーザー登録'
@@ -37,6 +40,7 @@ ja:
       title: 'ログイン'
       to_register_page: '登録はお済みですか？'
       register: '新規登録'
+      password_forget: 'パスワードをお忘れの方はこちら'
     create:
       success: 'ログインしました'
       fail: 'ログインに失敗しました'
@@ -85,3 +89,13 @@ ja:
       no_pomo: 'まだ記録がありません..'
     edit:
       title: 'プロフィール編集'
+  password_resets:
+    new:
+      title: 'パスワードリセット申請'
+    edit:
+      title: 'パスワードリセット'
+    create:
+      info: 'パスワードリセット手順を申請しました'
+    update:
+      info: 'パスワードを変更しました'
+      fail: 'パスワードの変更に失敗しました'

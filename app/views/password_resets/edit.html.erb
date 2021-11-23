@@ -1,0 +1,34 @@
+<% content_for(:title, t('.title')) %>
+<div class="col-md-6 col-md-offset-4 mx-auto">
+  <div class="box">
+    <span class="input-group-addon addon-twitter">
+      <p><i class="fas fa-desktop"></i></i><%= t ".title" %></p>
+    </span>
+    <%= form_with model: @user, url: password_reset_path(@token), local: true, method: :put do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+      <div class="divider-form"></div>
+      <div class="form-group">
+      <p><i class="far fa-envelope"></i>
+        <%= f.label :email, User.human_attribute_name(:email) %></p>
+        <%= f.email_field :email, class: "form-control", id: "exampleInputEmail1" %>
+      </div>
+
+      <div class="divider-form"></div>
+      <div class="form-group">
+      <p><i class="fa fa-lock"></i>
+        <%= f.label :password, User.human_attribute_name(:password) %></p>
+        <%= f.password_field :password, class: "form-control", id:"exampleInputPassword1" %>
+      </div>
+
+      <div class="divider-form"></div>
+      <div class="form-group">
+      <p><i class="fa fa-lock"></i>
+        <%= f.label :password_confirmation, User.human_attribute_name(:password_confirmation) %></p>
+        <%= f.password_field :password_confirmation, class: "form-control", id:"exampleInputPassword1" %>
+      </div>
+      
+      <div class="divider-form"></div>
+      <%= f.submit class: "btn-block btn btn-lg btn-primary" %>
+    <% end %>
+  </div>
+</div>

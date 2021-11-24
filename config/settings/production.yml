@@ -1,0 +1,2 @@
+defaults_url_options:
+  host: 'https://pomosto.herokuapp.com'

@@ -1,6 +1,7 @@
 <header class="sticky-top">
   <nav class="navbar navbar-expand-sm fixed-top navbar-dark" >
-  <% unless request.path.include?("profile") %>
+  <%= image_tag '/assets/icons-50.png' %>
+  <% if request.path.include?("top") %>
     <div class="navbar-brand">Pomosto</div>
   <% else %>
     <%= link_to "Pomosto", top_path, class: "navbar-brand"%>

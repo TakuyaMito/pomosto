@@ -13,6 +13,7 @@ gem 'chartkick'
 gem 'groupdate'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'config', '2.2.3'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

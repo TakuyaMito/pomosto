@@ -1,5 +1,5 @@
 <%= link_to list_card_path(list, card), class: "cardDetail_link", remote: true do %> 
-  <div class="list-card" id= "card-<%= card.id %>">
+  <div class="card" id= "card-<%= card.id %>">
     <h3 class="card_title"><%= card.title %></h3>
     <% if card.memo.size > 0 %>
       <div class="card_detail is-exist">

@@ -19,17 +19,17 @@ https://pomosto.herokuapp.com/
 |リスト作成ボタンからリスト作成|リストの中にカードを作成することができる|
 |---|---|
 |<img src="https://i.gyazo.com/41ee330e60a42793161813939d35300e.png">|
-|<img src="https://i.gyazo.com/63ca7db9478f91529f85f6d1e999396e.png">|
+<img src="https://i.gyazo.com/63ca7db9478f91529f85f6d1e999396e.png">|
 
 |スタートボタンを押すとポモドーロを開始|タイマーが完了すると音が鳴り、ストレッチボタン表示|
 |---|---|
 |<img src="https://i.gyazo.com/23fb68f993c343fc5fb8ec16df77f206.png">|
-|<img src="https://i.gyazo.com/73dd710627d0b4a120fee36abc5ef643.png">|
+<img src="https://i.gyazo.com/73dd710627d0b4a120fee36abc5ef643.png">|
 
 |4回ポモドーロを行うと15分休憩|プロフィールページで合計、本日、１週間のポモドーロ数を確認できます|
 |---|---|
 |<img src="https://i.gyazo.com/368483b93fd3edae6015a5c0db6c02a0.png">|
-|<img src="https://i.gyazo.com/4d399e2d45bf070744d0b9abf1acbf51.png">|
+<img src="https://i.gyazo.com/4d399e2d45bf070744d0b9abf1acbf51.png">|
 
 # ER図
 [![Image from Gyazo](https://i.gyazo.com/7b65a40e1ccbb3e6e6b52449dd75021d.png)](https://gyazo.com/7b65a40e1ccbb3e6e6b52449dd75021d)
